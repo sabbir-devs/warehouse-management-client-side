@@ -1,0 +1,23 @@
+.banner{
+    background: url('../../../../asets/banner-img.jpg');
+    background-size: cover;
+    background-position: fixed;
+    background-repeat: no-repeat;
+}
+.red{
+    color: #ff014f;
+}
+.about-us-btn{
+    padding: 6px 25px;
+    border-radius: 25px;
+    border: 1.5px solid #ff014f;
+    color: #ff014f;
+    background: transparent;
+    transition: .25s ease;
+}
+.about-us-btn:hover{
+    background: #ff014f;
+    color: #fff;
+    border: 1.5px solid #ff014f;
+    box-shadow: 0 0 10px 0 #ff014f;
+}
