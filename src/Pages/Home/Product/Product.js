@@ -4,7 +4,6 @@ import "./Product.css";
 
 const Product = ({ product }) => {
   const { _id, name, img, discription, minimum, price, available } = product;
-  console.log(product);
   return (
     <div className="product cardbg-base-100 shadow-xl w-full lg:w-4/12">
       <div className="card-body">
