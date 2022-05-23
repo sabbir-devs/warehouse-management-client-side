@@ -1,5 +1,5 @@
 .banner{
-    background: url('../../../../asets/banner-img.jpg');
+    background: url('../../../asets/banner-img.jpg');
     background-size: cover;
     background-position: fixed;
     background-repeat: no-repeat;

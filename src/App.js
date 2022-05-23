@@ -6,13 +6,15 @@ import Header from './Pages/Shared/Header/Header';
 import Footer from './Pages/Shared/Footer/Footer';
 import Home from './Pages/Home/Home/Home';
 import ProtectedPage from './Pages/Home/ProtectedPage/ProtectedPage'
+import SeeDetails from './Pages/Home/SeeDetails/SeeDetails';
 
 function App() {
   return (
     <div className="App">
       <Header/>
       <Routes>
-        <Route path='/' element={<ProtectedPage><Home/></ProtectedPage>}></Route>
+        <Route path='/' element={<Home/>}></Route>
+        <Route path='/seeDetails/:id' element={<SeeDetails/>}></Route>
         <Route path='/login' element={<Login/>}></Route>
         <Route path='/signup' element={<Signup/>}></Route>
       </Routes>

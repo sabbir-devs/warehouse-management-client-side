@@ -1,5 +1,30 @@
+
 [
-    {
-        "name": ""
+    {   
+        "_id": 1,
+        "img": "https://m.media-amazon.com/images/I/516lyyukllL._SL500_.jpg",
+        "name": "Cremax Magnetic Screwdriver Set",
+        "discription": "This CREMAX 57-in-1 magnetic screwdriver set contains 16 precision screwdrivers, 1 screwdriver holder, and 40 replaceable bits, compatible with 6 screw types – Slotted, Phillips, Pozidriv, Hexagon, Torx, Square. The screwdriver tips have a strong magnetic force to help you strengthen and loosen precision parts. The blades and high-strength steel shafts have rust and corrosion-resistant chrome plating for durability. The unit comes with a portable box for carrying and storing the tools. The unit comes with a 2-in-1 magnetizer/demagnetizer Tool for magnetizing or demagnetizing the screwdriver. The screwdrivers have non-slip PP + TPR handles for comfortable and efficient handling. The package weighs 5.21 pounds and measures‎ 15.16 x 12.99 x 3.54 inches.",
+        "price":"84",
+        "minimum":"150",
+        "available":"2000"
+    },
+    {   
+        "_id": 2,
+        "img": "https://m.media-amazon.com/images/I/516lyyukllL._SL500_.jpg",
+        "name": "Cremax Magnetic Screwdriver Set",
+        "discription": "This CREMAX 57-in-1 magnetic screwdriver set contains 16 precision screwdrivers, 1 screwdriver holder, and 40 replaceable bits, compatible with 6 screw types – Slotted, Phillips, Pozidriv, Hexagon, Torx, Square. The screwdriver tips have a strong magnetic force to help you strengthen and loosen precision parts. The blades and high-strength steel shafts have rust and corrosion-resistant chrome plating for durability. The unit comes with a portable box for carrying and storing the tools. The unit comes with a 2-in-1 magnetizer/demagnetizer Tool for magnetizing or demagnetizing the screwdriver. The screwdrivers have non-slip PP + TPR handles for comfortable and efficient handling. The package weighs 5.21 pounds and measures‎ 15.16 x 12.99 x 3.54 inches.",
+        "price":"84",
+        "minimum":"150",
+        "available":"2000"
+    },
+    {   
+        "_id": 3,
+        "img": "https://m.media-amazon.com/images/I/516lyyukllL._SL500_.jpg",
+        "name": "Cremax Magnetic Screwdriver Set",
+        "discription": "This CREMAX 57-in-1 magnetic screwdriver set contains 16 precision screwdrivers, 1 screwdriver holder, and 40 replaceable bits, compatible with 6 screw types – Slotted, Phillips, Pozidriv, Hexagon, Torx, Square. The screwdriver tips have a strong magnetic force to help you strengthen and loosen precision parts. The blades and high-strength steel shafts have rust and corrosion-resistant chrome plating for durability. The unit comes with a portable box for carrying and storing the tools. The unit comes with a 2-in-1 magnetizer/demagnetizer Tool for magnetizing or demagnetizing the screwdriver. The screwdrivers have non-slip PP + TPR handles for comfortable and efficient handling. The package weighs 5.21 pounds and measures‎ 15.16 x 12.99 x 3.54 inches.",
+        "price":"84",
+        "minimum":"150",
+        "available":"2000"
     }
 ]
