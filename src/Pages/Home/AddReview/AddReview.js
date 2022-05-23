@@ -4,7 +4,7 @@ import './AddReview.css';
 const AddReview = () => {
     return (
         <div className='add-review'>
-            
+            <h1>add review</h1>
         </div>
     );
 };
