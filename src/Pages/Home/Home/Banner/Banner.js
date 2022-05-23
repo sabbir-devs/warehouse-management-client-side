@@ -4,7 +4,7 @@ import './Banner.css';
 const Banner = () => {
   return (
     <div className="banner px-12">
-      <div className="w-2/4 to-transparent py-24">
+      <div className="w-full lg:w-2/4 to-transparent py-24">
         <h1 className="text-4xl font-bold text-white">QUALITY IN</h1>
         <h1 className="text-5xl font-bold mt-5 red">EVERYTHING</h1>
         <p className="text-2xl text-white font-semibold mt-7">

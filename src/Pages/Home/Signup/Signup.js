@@ -162,7 +162,7 @@ const Signup = () => {
           </small>
         </p>
         <div className="divider">OR</div>
-        <button onClick={signInWithGoogle} className="google-signin w-full">
+        <button onClick={() => signInWithGoogle()} className="google-signin w-full">
           <FcGoogle style={{ fontSize: "30px" }}></FcGoogle>Google Sign In
         </button>
       </div>
