@@ -50,7 +50,7 @@ const MyOrders = () => {
                   <button className="btn btn-outline btn-sm">Pay</button>
                 </td>
                 <td>
-                  <label onClick={() => setIdForDelete(order._id)} for="confirm-delete-order" class="btn btn-outline btn-sm modal-button">
+                  <label onClick={() => setIdForDelete(order._id)} htmlFor="confirm-delete-order" className="btn btn-outline btn-sm modal-button">
                     Delete
                   </label>
                 </td>
@@ -58,23 +58,23 @@ const MyOrders = () => {
             ))}
           </tbody>
         </table>
-        <input type="checkbox" id="confirm-delete-order" class="modal-toggle" />
-        <div class="modal">
-          <div class="modal-box">
-            <h3 class="font-bold text-lg">
+        <input type="checkbox" id="confirm-delete-order" className="modal-toggle" />
+        <div className="modal">
+          <div className="modal-box">
+            <h3 className="font-bold text-lg">
               Alart!!
             </h3>
-            <p class="py-4">
+            <p className="py-4">
                Are you sure you want to delete ?
             </p>
             <div className="flex justify-end">
-            <div class="modal-action">
-              <label for="confirm-delete-order" class="btn btn-outline btn-sm">
+            <div className="modal-action">
+              <label htmlFor="confirm-delete-order" className="btn btn-outline btn-sm">
                 Cancle
               </label>
             </div>
-            <div class="modal-action ml-2">
-            <label onClick={() => handleDeleteOrder(idForDelete)} for="confirm-delete-order" class="btn btn-outline btn-sm">
+            <div className="modal-action ml-2">
+            <label onClick={() => handleDeleteOrder(idForDelete)} htmlFor="confirm-delete-order" className="btn btn-outline btn-sm">
                 Confirm
               </label>
             </div>

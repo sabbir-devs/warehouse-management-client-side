@@ -2,7 +2,6 @@ import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../../../firebase.init";
 import "./AddReview.css";
-import { AiFillStar, AiOutlineStar } from "react-icons/ai";
 import { toast } from "react-toastify";
 
 const AddReview = () => {
@@ -10,10 +9,12 @@ const AddReview = () => {
   const handleReview = (event) => {
     event.preventDefault();
     const reviewValue = event.target.review.value;
+    const rating = event.target.rating.value;
 
     const review = {
          name: user?.displayName,
-         review: reviewValue 
+         review: reviewValue,
+         rating: rating
         };
     fetch("http://localhost:5000/reviews", {
       method: "POST",
@@ -37,34 +38,26 @@ const AddReview = () => {
             <input
               type="text"
               name="name"
-              value={user.displayName}
+              value={user?.displayName}
               className="input input-bordered w-full max-w-xs"
               readOnly
               id=""
+              required
             />
             <textarea
               name="review"
               id=""
-              className="input input-bordered w-full max-w-xs mt-5"
+              className="textarea w-full max-w-xs mt-5"
               placeholder="Write Your Opinion"
             ></textarea>
-            <div className="flex items-center jjustify-center list-none my-2 text-2xl text-yellow-500 ">
-              <li className="cursor-pointer">
-                <AiFillStar></AiFillStar>
-              </li>
-              <li className="cursor-pointer">
-                <AiFillStar></AiFillStar>
-              </li>
-              <li className="cursor-pointer">
-                <AiFillStar></AiFillStar>
-              </li>
-              <li className="cursor-pointer">
-                <AiOutlineStar></AiOutlineStar>
-              </li>
-              <li className="cursor-pointer">
-                <AiOutlineStar></AiOutlineStar>
-              </li>
-            </div>
+            <input
+              type="number"
+              name="rating"
+              placeholder="Rating 0-5"
+              className="input mt-2 input-bordered w-full max-w-xs"
+              id=""
+              required
+            />
             <input
               type="submit"
               className="btn btn-outline mt-4"

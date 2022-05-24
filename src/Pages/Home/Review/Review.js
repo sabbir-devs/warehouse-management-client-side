@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./Review.css";
-import { AiFillStar, AiOutlineStar } from "react-icons/ai";
+
 
 
 const Review = () => {
@@ -8,32 +8,17 @@ const Review = () => {
   useEffect(() => {
     fetch("http://localhost:5000/reviews")
       .then((res) => res.json())
-      .then((data) => setReviews(data));
+      .then((data) => setReviews(data.reverse()));
   }, [reviews]);
   return (
-    <div className="review p-12 my-12">
+    <div className="review p-12 mt-12">
+      <h1 className="text-5xl text-center">Customer Review</h1>
       <div className="card bg-base-100 grid lg:flex lg:flex-row gap-4 ">
-        {reviews.map((review) => (
+        {reviews.reverse().slice(0, 3).map((review) => (
           <div key={review._id} className="card-body w-full lg:w-1/3 shadow-2xl">
             <h2 className="card-title">{review.name}</h2>
             <p>{review.review}</p>
-            <div className="flex items-center jjustify-center list-none my-2 text-2xl text-yellow-500 ">
-              <li className="cursor-pointer">
-                <AiFillStar></AiFillStar>
-              </li>
-              <li className="cursor-pointer">
-                <AiFillStar></AiFillStar>
-              </li>
-              <li className="cursor-pointer">
-                <AiFillStar></AiFillStar>
-              </li>
-              <li className="cursor-pointer">
-                <AiOutlineStar></AiOutlineStar>
-              </li>
-              <li className="cursor-pointer">
-                <AiOutlineStar></AiOutlineStar>
-              </li>
-            </div>
+            <p>Rating: {review.rating}</p>
           </div>
         ))}
       </div>
