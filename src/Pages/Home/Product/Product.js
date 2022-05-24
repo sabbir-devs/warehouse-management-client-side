@@ -5,10 +5,10 @@ import "./Product.css";
 const Product = ({ product }) => {
   const { _id, name, img, discription, minimum, price, available } = product;
   return (
-    <div className="product cardbg-base-100 shadow-xl w-full lg:w-4/12">
+    <div className="product cardbg-base-100 shadow-xl w-full text-white">
       <div className="card-body">
-        <img src={img} alt="" />
-        <h1>{name}</h1>
+        <img className="h-52" src={img} alt="" />
+        <h1 className="text-2xl">{name}</h1>
         <h2>Price: ${price}</h2>
         <p>Minimum Order: {minimum}</p>
         <p>Available: {available}</p>

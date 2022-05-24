@@ -12,7 +12,6 @@ const MyOrders = () => {
   const [idForDelete, setIdForDelete] = useState(0);
   const [orders, setOrders] = useState([]);
   const navigate = useNavigate();
-  const [isLoading, setIsLoading] = useState(true)
   
   
 
@@ -35,7 +34,7 @@ const MyOrders = () => {
       .then((data) => {setOrders(data)});
   }, [user, navigate]);
   console.log(orders);
-  if(loading || isLoading){
+  if(loading){
     return <Loading></Loading>
   }
   const handleDeleteOrder = (id) => {

@@ -24,7 +24,7 @@ const Header = () => {
     return (
         <div className="header">
       <div>
-        <Link to="/"><h1 className="title text-3xl font-semibold">Manufacturer</h1></Link>
+        <Link to="/"><h1 className="title text-3xl font-semibold">Pro Tools</h1></Link>
       </div>
       <div>
         <nav className={openNav ? " nav-close":"nav-open"}>

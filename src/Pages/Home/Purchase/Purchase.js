@@ -27,7 +27,6 @@ const Purchase = ({ orderQuantity, detailProduct }) => {
       address: address,
       phone: number,
     };
-    console.log(orderDetail);
 
     const url = `http://localhost:5000/orders`;
     fetch(url, {
@@ -46,8 +45,6 @@ const Purchase = ({ orderQuantity, detailProduct }) => {
 
   return (
     <div className="purchase">
-      {/* <label htmlFor="my-modal-6" className="btn modal-button">open modal</label> */}
-
       <input type="checkbox" id="my-modal-6" className="modal-toggle" />
       <div className="modal modal-bottom sm:modal-middle">
         <div className="modal-box">
@@ -128,11 +125,11 @@ const Purchase = ({ orderQuantity, detailProduct }) => {
                 className="input input-bordered w-full max-w-xs"
               />
             </div>
-                <input
-                  type="submit"
-                  value="Place Order"
-                  className="w-full btn btn-outline mt-4"
-                />
+            <input
+              type="submit"
+              value="Place Order"
+              className="w-full btn btn-outline mt-4"
+            />
           </form>
         </div>
       </div>
