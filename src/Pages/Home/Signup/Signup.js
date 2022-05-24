@@ -10,6 +10,7 @@ import Loading from "../Loading/Loading";
 import "./Signup.css";
 import { FcGoogle } from "react-icons/fc";
 import { auth } from "../../../firebase.init";
+import useToken from "../../../hooks/useToken";
 
 const Signup = () => {
   const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
@@ -23,11 +24,12 @@ const Signup = () => {
 
   const [updateProfile, updating, updateError] = useUpdateProfile(auth);
 
-  // const [token]  = useToken(user || gUser);
+  const [token] = useToken(user || gUser)
 
   const navigate = useNavigate();
 
   let signInError;
+
 
   if (loading || gLoading || updating) {
     return <Loading></Loading>;
@@ -42,15 +44,16 @@ const Signup = () => {
       </p>
     );
   }
-
-  // if (token) {
-  //     navigate('/');
-  // }
+  console.log(token)
+  if (token) {
+      navigate('/');
+  }
 
   const onSubmit = async (data) => {
     await createUserWithEmailAndPassword(data.email, data.password);
     await updateProfile({ displayName: data.name });
     console.log("update done");
+    
   };
   return (
     <div className="signup">

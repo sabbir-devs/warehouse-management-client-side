@@ -10,6 +10,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import Loading from "../Loading/Loading";
 import { FcGoogle } from "react-icons/fc";
 import { useForm } from "react-hook-form";
+import useToken from "../../../hooks/useToken";
 
 const Login = () => {
   const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
@@ -21,18 +22,18 @@ const Login = () => {
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
 
-  // const [token] = useToken(user || gUser);
+  const [token] = useToken(user || gUser);
 
   let signInError;
   const navigate = useNavigate();
   const location = useLocation();
   let from = location.state?.from?.pathname || "/";
 
-  // useEffect( () =>{
-  //     if (token) {
-  //         navigate(from, { replace: true });
-  //     }
-  // }, [token, from, navigate])
+  useEffect( () =>{
+      if (token) {
+          navigate(from, { replace: true });
+      }
+  }, [token, from, navigate])
 
   if (loading || gLoading) {
     return <Loading></Loading>;
