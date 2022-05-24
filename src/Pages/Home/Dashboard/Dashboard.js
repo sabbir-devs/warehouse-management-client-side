@@ -8,7 +8,7 @@ const Dashboard = () => {
     <div className="dashboard">
       <div className="drawer drawer-mobile">
         <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
-        <div className="drawer-content ">
+        <div className="drawer-content">
           <label
             htmlFor="my-drawer-2"
             className="btn absolute top-20 left-2 rounded drawer-button lg:hidden"
@@ -17,14 +17,12 @@ const Dashboard = () => {
           </label>
 
           <div className="mt-12 pt-3 lg:mt-0 px-2">
-              
-            <h1>welcome to our website dashboard</h1>
             <Outlet></Outlet>
           </div>
         </div>
         <div className="drawer-side">
           <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
-          <ul className="menu p-4 overflow-y-auto w-80 bg-slate-300 text-black">
+          <ul className="menu p-4 overflow-y-auto w-60 bg-slate-300 text-black">
             <li>
               <Link to="/dashboard">My Order</Link>
             </li>
@@ -33,6 +31,18 @@ const Dashboard = () => {
             </li>
             <li>
               <Link to="/dashboard/myProfile">My Profile</Link>
+            </li>
+            <li>
+              <Link to="/dashboard/manageOrders">Manage All Orders</Link>
+            </li>
+            <li>
+              <Link to="/dashboard/addProduct">Add A Product</Link>
+            </li>
+            <li>
+              <Link to="/dashboard/makeAdmin">Make Admin</Link>
+            </li>
+            <li>
+              <Link to="/dashboard/manageProducts">Manage Products</Link>
             </li>
           </ul>
         </div>

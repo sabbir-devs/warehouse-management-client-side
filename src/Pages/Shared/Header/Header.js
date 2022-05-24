@@ -31,7 +31,9 @@ const Header = () => {
           <NavLink className="link-btn" to="/">Home</NavLink>
           <NavLink className="link-btn" to="/myPortfolio">My Portfolio</NavLink>
           <NavLink className="link-btn" to="/blogs">Blogs</NavLink>
-          <NavLink className="link-btn" to="/dashboard">Dashbord</NavLink>
+          {
+            user && <NavLink className="link-btn" to="/dashboard">Dashbord</NavLink>
+          }
           {!user ? <NavLink className="login-btn" to="/login">Login</NavLink>:
           <NavLink onClick={() => handleSignOut()} className="login-btn" style={{background:'red'}} to="/login">Logout</NavLink>}
         </nav>

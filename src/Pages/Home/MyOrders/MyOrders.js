@@ -1,24 +1,42 @@
+import { signOut } from "firebase/auth";
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { useQuery } from "react-query";
+import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { auth } from "../../../firebase.init";
 import Loading from "../Loading/Loading";
 import "./MyOrders.css";
 
 const MyOrders = () => {
-  const [user] = useAuthState(auth)
+  const [user , loading] = useAuthState(auth);
   const [idForDelete, setIdForDelete] = useState(0);
-  const { data, isLoading, refetch } = useQuery("myOrders", () =>
+  const [orders, setOrders] = useState([]);
+  const navigate = useNavigate();
+  const [isLoading, setIsLoading] = useState(true)
+  
+  
+
+  useEffect(() => {
     fetch(`http://localhost:5000/myOrders?customerEmail=${user?.email}`, {
       method: "GET",
-      headers:{
-        'authorization' : `Bearer ${localStorage.getItem('accessToken')}`
-      }
-    }).then((res) => res.json())
-  );
-  if (isLoading) {
-    return <Loading></Loading>;
+      headers: {
+        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+      },
+    })
+      .then((res) => {
+        console.log("res", res);
+        if (res.status === 401 || res.status === 403) {
+          signOut(auth);
+          localStorage.removeItem("accessToken");
+          navigate("/");
+        }
+        return res.json();
+      })
+      .then((data) => {setOrders(data)});
+  }, [user, navigate]);
+  console.log(orders);
+  if(loading || isLoading){
+    return <Loading></Loading>
   }
   const handleDeleteOrder = (id) => {
     const url = `http://localhost:5000/myOrders/${id}`;
@@ -28,7 +46,9 @@ const MyOrders = () => {
       .then((res) => res.json())
       .then((resData) => {
         toast.success("delete successful");
-        refetch();
+        const remaining = orders.filter(order => order._id !== id)
+        setOrders(remaining)
+        console.log(remaining)
       });
   };
   return (
@@ -46,7 +66,7 @@ const MyOrders = () => {
             </tr>
           </thead>
           <tbody>
-            {data.map((order, index) => (
+            {orders?.map((order, index) => (
               <tr key={order._id}>
                 <th>{index + 1}</th>
                 <td>{order.customerName}</td>
