@@ -14,7 +14,7 @@ const Review = () => {
     <div className="review p-12 my-12">
       <div className="card bg-base-100 grid lg:flex lg:flex-row gap-4 ">
         {reviews.map((review) => (
-          <div key={review._id} className="card-body w-1/3 shadow-2xl">
+          <div key={review._id} className="card-body w-full lg:w-1/3 shadow-2xl">
             <h2 className="card-title">{review.name}</h2>
             <p>{review.review}</p>
             <div className="flex items-center jjustify-center list-none my-2 text-2xl text-yellow-500 ">

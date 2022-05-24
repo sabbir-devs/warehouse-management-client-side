@@ -6,8 +6,8 @@ import Loading from "../Loading/Loading";
 
 const Purchase = ({ orderQuantity, detailProduct }) => {
   const [user, loading] = useAuthState(auth);
-//   console.log(orderQuantity);
-//   console.log(detailProduct);
+  //   console.log(orderQuantity);
+  //   console.log(detailProduct);
 
   if (loading) {
     return <Loading></Loading>;
@@ -19,32 +19,31 @@ const Purchase = ({ orderQuantity, detailProduct }) => {
     const number = event.target.number.value;
 
     const orderDetail = {
-        productName: detailProduct?.name, 
-        customerName: user?.displayName,
-        customerEmail: user?.email,
-        orderQuantity,
-        price: price,
-        address: address,
-        phone: number
-    }
-    console.log(orderDetail)
+      productName: detailProduct?.name,
+      customerName: user?.displayName,
+      customerEmail: user?.email,
+      orderQuantity,
+      price: price,
+      address: address,
+      phone: number,
+    };
+    console.log(orderDetail);
 
-    const url = `http://localhost:5000/orders`
+    const url = `http://localhost:5000/orders`;
     fetch(url, {
-        method:"POST",
-        headers: {
-            'content-type' : 'application/json',
-        },
-        body: JSON.stringify(orderDetail)
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(orderDetail),
     })
-    .then(res => res.json())
-    .then(data => {
-         console.log(data)
-        toast.success('Order Success')
-    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        toast.success("Order Success");
+      });
   };
 
-  
   return (
     <div className="purchase">
       {/* <label htmlFor="my-modal-6" className="btn modal-button">open modal</label> */}
@@ -58,7 +57,7 @@ const Purchase = ({ orderQuantity, detailProduct }) => {
             </label>
           </div>
           <form onSubmit={handleModal}>
-              <h1 title={detailProduct?.name}>{detailProduct?.name}</h1>
+            <h1 title={detailProduct?.name}>{detailProduct?.name}</h1>
             <div className="form-control w-full max-w-xs">
               <label className="label">
                 <span className="label-text">Name</span>
@@ -90,7 +89,7 @@ const Purchase = ({ orderQuantity, detailProduct }) => {
               <input
                 type="text"
                 name="quantity"
-                value={orderQuantity + "pcs"}
+                value={orderQuantity}
                 readOnly
                 className="input input-bordered w-full max-w-xs"
               />
@@ -102,7 +101,7 @@ const Purchase = ({ orderQuantity, detailProduct }) => {
               <input
                 type="email"
                 name="price"
-                value={"Price: $" + orderQuantity * detailProduct?.price}
+                value={orderQuantity * detailProduct?.price}
                 readOnly
                 className="input input-bordered w-full max-w-xs"
               />
@@ -129,7 +128,15 @@ const Purchase = ({ orderQuantity, detailProduct }) => {
                 className="input input-bordered w-full max-w-xs"
               />
             </div>
-            <input type="submit" value="Place Order" className="btn btn-outline w-full mt-4" />
+            <div className="modal-action">
+              <label htmlFor="my-modal-6" className="btn btn-outline mr-2 px-5">
+                <input
+                  type="submit"
+                  value="Place Order"
+                  className="w-full mt-4"
+                />
+              </label>
+            </div>
           </form>
         </div>
       </div>

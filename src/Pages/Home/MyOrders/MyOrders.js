@@ -1,26 +1,90 @@
-import React, { useEffect, useState } from 'react';
-import { useAuthState } from 'react-firebase-hooks/auth';
-import { auth } from '../../../firebase.init';
-import './MyOrders.css';
+import React, { useEffect, useState } from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { useQuery } from "react-query";
+import { auth } from "../../../firebase.init";
+import Loading from "../Loading/Loading";
+import "./MyOrders.css";
 
 const MyOrders = () => {
-    const [user] = useAuthState(auth)
-    const [orders, setOrders] = useState([])
-    useEffect(() => {
-        const email = user?.email
-        const url = `http://localhost:5000/myOrders?email=${email}`
-        fetch(url)
-        .then(res => res.json())
-        .then(data => setOrders(data))
-    },[user])
-
-
-    console.log(orders)
-    return (
-        <div className='my-orders'>
-            <h1>my orders {orders.length}</h1>
+  const [idForDelete, setIdForDelete] = useState(0);
+  const { data, isLoading, refetch } = useQuery("myOrders", () =>
+    fetch("http://localhost:5000/myOrders").then((res) => res.json())
+  );
+  if (isLoading) {
+    return <Loading></Loading>;
+  }
+  const handleDeleteOrder = (id) => {
+    const url = `http://localhost:5000/myOrders/${id}`;
+    fetch(url, {
+      method: "DELETE",
+    })
+      .then((res) => res.json())
+      .then((resData) => {
+        console.log("delete successful");
+        refetch();
+      });
+  };
+  return (
+    <div className="my-orders">
+      <h1>my orders {data.length}</h1>
+      <div className="overflow-x-auto">
+        <table className="table w-full">
+          <thead>
+            <tr>
+              <th></th>
+              <th>Name</th>
+              <th>Quantity</th>
+              <th>Price</th>
+              <th></th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            {data.map((order, index) => (
+              <tr key={order._id}>
+                <th>{index + 1}</th>
+                <td>{order.customerName}</td>
+                <td>{order.orderQuantity}</td>
+                <td>$ {order.price}</td>
+                <td>
+                  <button className="btn btn-outline btn-sm">Pay</button>
+                </td>
+                <td>
+                  <label onClick={() => setIdForDelete(order._id)} for="confirm-delete-order" class="btn btn-outline btn-sm modal-button">
+                    Delete
+                  </label>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+        <input type="checkbox" id="confirm-delete-order" class="modal-toggle" />
+        <div class="modal">
+          <div class="modal-box">
+            <h3 class="font-bold text-lg">
+              Alart!!
+            </h3>
+            <p class="py-4">
+               Are you sure you want to delete ?
+            </p>
+            <div className="flex justify-end">
+            <div class="modal-action">
+              <label for="confirm-delete-order" class="btn btn-outline btn-sm">
+                Cancle
+              </label>
+            </div>
+            <div class="modal-action ml-2">
+            <label onClick={() => handleDeleteOrder(idForDelete)} for="confirm-delete-order" class="btn btn-outline btn-sm">
+                Confirm
+              </label>
+            </div>
+            
+            </div>
+          </div>
         </div>
-    );
+      </div>
+    </div>
+  );
 };
 
 export default MyOrders;
