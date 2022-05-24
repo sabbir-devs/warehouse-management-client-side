@@ -13,7 +13,7 @@ const Header = () => {
 
     const handleSignOut = () => {
       signOut(auth).then(() => {
-        
+        localStorage.removeItem('accessToken')
       }).catch((error) => {
         
       });

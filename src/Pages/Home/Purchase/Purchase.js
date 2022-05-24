@@ -128,15 +128,11 @@ const Purchase = ({ orderQuantity, detailProduct }) => {
                 className="input input-bordered w-full max-w-xs"
               />
             </div>
-            <div className="modal-action">
-              <label htmlFor="my-modal-6" className="btn btn-outline mr-2 px-5">
                 <input
                   type="submit"
                   value="Place Order"
-                  className="w-full mt-4"
+                  className="w-full btn btn-outline mt-4"
                 />
-              </label>
-            </div>
           </form>
         </div>
       </div>
