@@ -6,7 +6,12 @@ import "./ManageProducts.css";
 
 const ManageProducts = () => {
   const { data: products, isLoading, refetch } = useQuery("product", () =>
-    fetch("http://localhost:5000/product").then((res) => res.json())
+    fetch("http://localhost:5000/product",{
+      method:'GET',
+      headers:{
+        'content-type': 'application/json',
+      }
+    }).then((res) => res.json())
   );
   if(isLoading){
     return <Loading></Loading>

@@ -2,8 +2,13 @@ import React from "react";
 import { Link, Outlet } from "react-router-dom";
 import "./Dashboard.css";
 import { GiHamburgerMenu } from "react-icons/gi";
+import useAdmin from "../../../hooks/useAdmin";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth } from "../../../firebase.init";
 
 const Dashboard = () => {
+  const [user] = useAuthState(auth)
+  const [admin] = useAdmin(user)
   return (
     <div className="dashboard">
       <div className="drawer drawer-mobile">
@@ -38,9 +43,9 @@ const Dashboard = () => {
             <li>
               <Link to="/dashboard/addProduct">Add A Product</Link>
             </li>
-            <li>
+            {admin && <li>
               <Link to="/dashboard/makeAdmin">Make Admin</Link>
-            </li>
+            </li>}
             <li>
               <Link to="/dashboard/manageProducts">Manage Products</Link>
             </li>

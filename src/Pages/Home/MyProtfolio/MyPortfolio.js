@@ -1,26 +1,18 @@
 import React from "react";
-import { toast } from "react-toastify";
 
 const MyPortfolio = () => {
   return (
-    <div className="my-portfolio">
-      <div className="hero min-h-screen bg-base-200">
-        <div className="hero-content flex-col lg:flex-row-reverse">
-          <img
-            src="https://api.lorem.space/image/movie?w=260&h=400"
-            className="max-w-sm rounded-lg shadow-2xl"
-          />
-          <div>
-            <h1 className="text-5xl font-bold">Box Office News!</h1>
-            <p className="py-6">
-              Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
-              excepturi exercitationem quasi. In deleniti eaque aut repudiandae
-              et a id nisi.
-            </p>
-            <button onClick={() => toast.success("Wow so easy!")} className="btn btn-primary">Get Started</button>
-          </div>
-        </div>
-      </div>
+    <div className="my-portfolio text-white px-12 h-screen grid items-center">
+      <div><h1 className="mt-5 text-xl">Name: <span className="text-green-500">MD Sabbir</span></h1>
+      <h1 className="mt-5 text-xl">Email: <span className="text-green-500">sabbirhosan370@gmail.com</span></h1>
+      <h1 className="mt-5 text-xl">Education: <span className="text-green-500">SSC pass on 2021 from Satsang Tapoban High School</span></h1>
+      <h1 className="mt-5 text-xl">My Skills As a Web Developer: <span className="text-green-500">Html, Css, Bootstrap, Tailwind, Javascript, React js, Express js, Mongodb</span></h1>
+      <div className="mt-5">
+        <h1 className="text-xl">My Some Projects</h1>
+        <p className="text-blue-500 mt-2">https://whimsical-puppy-d11b27.netlify.app/</p>
+        <p className="text-blue-500 mt-2">https://the-bodycoach-cf175.web.app/</p>
+        <p className="text-blue-500 mt-2">https://warehouse-68b1a.web.app/</p>
+      </div></div>
     </div>
   );
 };

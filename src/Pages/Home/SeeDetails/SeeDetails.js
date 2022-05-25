@@ -36,7 +36,7 @@ const SeeDetails = () => {
             <form onSubmit={handleQuantity} className="flex mt-4">
               <input
                 type="text"
-                placeholder="Type here"
+                placeholder={`Minimum Quantity ${detailProduct.minimum}`}
                 className="input w-full max-w-xs"
                 name="quantity"
               />

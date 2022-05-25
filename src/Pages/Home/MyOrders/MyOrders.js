@@ -15,7 +15,8 @@ const MyOrders = () => {
   
 
   useEffect(() => {
-    fetch(`http://localhost:5000/myOrders?customerEmail=${user?.email}`, {
+    if(user){
+      fetch(`http://localhost:5000/myOrders?customerEmail=${user?.email}`, {
       method: "GET",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,
@@ -31,6 +32,7 @@ const MyOrders = () => {
         return res.json();
       })
       .then((data) => {setOrders(data)});
+    }
   }, [user, navigate]);
   console.log(orders);
   if(loading){
