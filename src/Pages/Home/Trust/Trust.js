@@ -7,7 +7,9 @@ import { VscFeedback } from 'react-icons/vsc';
 
 const Trust = () => {
   return (
-    <div className="trust flex flex-col lg:flex-row lg:flex items-center justify-center p-12 text-red-500 text-2xl">
+    <div className="text-white mt-10">
+      <h1 className="uppercase text-4xl text-center">Milleons busness trust Us</h1>
+      <div className="trust flex flex-col lg:flex-row lg:flex items-center justify-center px-12 mb-12 mt-5 text-red-500 text-2xl">     
       <div className="text-center w-1/4 lg:w-full flex flex-col justify-center items-center">
           <FaFontAwesomeFlag className="text-6xl font-thin"></FaFontAwesomeFlag>
         <h1 className="my-2">57</h1>
@@ -28,6 +30,7 @@ const Trust = () => {
         <h1 className="my-2">429+</h1>
         <p>Feedbacks</p>
       </div>
+    </div>
     </div>
   );
 };

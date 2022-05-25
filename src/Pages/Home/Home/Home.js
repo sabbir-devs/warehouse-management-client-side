@@ -5,14 +5,16 @@ import Banner from '../Banner/Banner';
 import './Home.css'
 import Review from '../Review/Review';
 import WhyChooseUs from '../WhyChooseUs/WhyChooseUs';
+import AboutUs from '../AboutUs/AboutUs';
 
 const Home = () => {
     return (
         <div className='home'>
             <Banner/>
-            <Trust/>    
+            <Trust/>
             <Products/>
             <WhyChooseUs/>
+            <AboutUs/>
             <Review/>
         </div>
     );

@@ -13,7 +13,6 @@ const MyOrders = () => {
   const [orders, setOrders] = useState([]);
   const navigate = useNavigate();
   
-  
 
   useEffect(() => {
     fetch(`http://localhost:5000/myOrders?customerEmail=${user?.email}`, {
