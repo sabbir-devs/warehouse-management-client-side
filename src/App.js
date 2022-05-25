@@ -20,6 +20,7 @@ import ManageAllOrders from "./Pages/Home/ManageAllOrders/ManageAllOrders";
 import AddProduct from "./Pages/Home/AddProduct/AddProduct";
 import ManageProducts from "./Pages/Home/ManageProducts/ManageProducts";
 import MakeAdmin from "./Pages/Home/MakeAdmin/MakeAdmin";
+import RequirAdmin from "./Pages/Home/RequirAdmin/RequirAdmin";
 
 function App() {
   return (
@@ -38,7 +39,7 @@ function App() {
           <Route path="addReview" element={<AddReview />}></Route>
           <Route path="manageOrders" element={<ManageAllOrders/>}></Route>
           <Route path="addProduct" element={<AddProduct/>}></Route>
-          <Route path="makeAdmin" element={<MakeAdmin/>}></Route>
+          <Route path="makeAdmin" element={<RequirAdmin><MakeAdmin/></RequirAdmin>}></Route>
           <Route path="manageProducts" element={<ManageProducts/>}></Route>
         </Route>
         <Route path="*" element={<NotFound></NotFound>}></Route>

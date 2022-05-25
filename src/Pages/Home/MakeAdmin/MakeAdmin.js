@@ -1,12 +1,10 @@
 import React from "react";
 import { useQuery } from "react-query";
-import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import Loading from "../Loading/Loading";
 import "./MakeAdmin.css";
 
 const MakeAdmin = () => {
-  const navigate = useNavigate()
   const { data: users, isLoading, refetch } = useQuery("user", () =>
     fetch("http://localhost:5000/user",{
       method: "GET",

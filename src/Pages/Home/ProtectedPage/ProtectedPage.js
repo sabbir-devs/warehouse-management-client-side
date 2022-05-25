@@ -5,14 +5,14 @@ import { auth } from '../../../firebase.init';
 import Loading from '../Loading/Loading';
 
 const ProtectedPage = ({children}) => {
-    const [user, loading, error] = useAuthState(auth);
+    const [user, loading] = useAuthState(auth);
     const location = useLocation();
 
     if(loading){
         return <Loading></Loading>
     }
     if(!user){
-        <Navigate to={`/login`} state={{from: location}} replace></Navigate>
+        return <Navigate to={`/login`} state={{from: location}} replace></Navigate>
     }
     return children
 };
