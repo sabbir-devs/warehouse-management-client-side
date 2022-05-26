@@ -4,91 +4,109 @@ import "./Blogs.css";
 const Blogs = () => {
   return (
     <div className="blogs px-12 gap-5 grid text-white my-12">
-      <div className="p-3 shadow-2xl rounded">
-        <h1 className="text-3xl">
-          1. How will you improve the performance of a React Application?
-        </h1>
-        <p className="text-md mt-5">
-          Internally, React uses several clever techniques to minimize the
-          number of costly DOM operations required to update the UI. For many
-          applications, using React will lead to a fast user interface without
-          doing much work to specifically optimize for performance.
-          Nevertheless, there are several ways you can speed up your React
-          application. such as:
-          <li className="mt-2">
-            Keeping component state local where necessary
-          </li>
-          <li className="mt-2">
-            Memoizing React components to prevent unnecessary re-renders
-          </li>
-          <li className="mt-2">
-            Code-splitting in React using dynamic import()
-          </li>
-          <li className="mt-2">Windowing or list virtualization in React</li>
-          <li className="mt-2">Lazy loading images in React</li>
-        </p>
-      </div>
-      <div className="p-3 shadow-2xl rounded">
-        <h1 className="text-3xl">
-          2. What are the different ways to manage a state in a React
-          application?
-        </h1>
-        <p className="text-md mt-5">
-          The Four Kinds of React State to Manage When we talk about state in
-          our applications, it’s important to be clear about what types of state
-          actually matter. There are four main types of state you need to
-          properly manage in your React apps:
-          <li className="mt-2">1. Local state</li>
-          <li className="mt-2">2. Global state</li>
-          <li className="mt-2">3. Server state</li>
-          <li className="mt-2">4. Server state</li>
-        </p>
-      </div>
-      <div className="p-3 shadow-2xl rounded">
-        <h1 className="text-3xl">3. How does prototypical inheritance work?</h1>
-        <p className="text-md mt-5">
-          Prototype-based programming is a style of object-oriented programming
-          in which behaviour reuse (known as inheritance) is performed via a
-          process of reusing existing objects that serve as prototypes. This
-          model can also be known as prototypal, prototype-oriented, classless,
-          or instance-based programming. JavaScript objects are dynamic "bags"
-          of properties (referred to as own properties). JavaScript objects have
-          a link to a prototype object. When trying to access a property of an
-          object, the property will not only be sought on the object but on the
-          prototype of the object, the prototype of the prototype, and so on
-          until either a property with a matching name is found or the end of
-          the prototype chain is reached.
-        </p>
-      </div>
-      <div className="p-3 shadow-xl rounded">
-        <h1 className="text-3xl">
-          4. Why you do not set the state directly in React. For example, if you
-          have const [products, setProducts] = useState([]). Why you do not set
-          products = [...] instead, you use the setProducts
-        </h1>
-        <p className="text-md mt-5">
-        One should never update the products directly because If you update it directly, calling the setProducts() afterward may just replace the update you made. When you directly update the state, it does not change this.state immediately. Instead, it creates a pending state transition, and accessing it after calling this method will only return the present value. You will lose control of the state across all components. Thats why we don't use setProducts directly.
-        </p>
-      </div>
-      <div className="p-3 shadow-xl rounded">
-        <h1 className="text-3xl">
-          5. You have an array of products. Each product has a name, price,
-          description, etc. How will you implement a search to find products by
-          name?
-        </h1>
-        <p className="text-md mt-5">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, unde
-          maiores. Exercitationem id ab explicabo dolorem aut? Soluta, aliquid
-          aperiam.
-        </p>
-      </div>
-      <div className="p-3 shadow-2xl rounded">
-        <h1 className="text-3xl">
-          6. What is a unit test? Why should write unit tests?
-        </h1>
-        <p className="text-md mt-5">
-        Unit tests are typically automated tests written and run by software developers to ensure that a section of an application (known as the "unit") meets its design and behaves as intended. In procedural programming, a unit could be an entire module, but it is more commonly an individual function or procedure. In object-oriented programming, a unit is often an entire interface, such as a class, or an individual method. By writing tests first for the smallest testable units, then the compound behaviors between those, one can build up comprehensive tests for complex applications
-        </p>
+      <div>
+        <div className="mt-10 mb-15 max-w-7xl mx-auto px-12">
+          <div className="mb-5 p-3 shadow-2xl rounded">
+            <h2 className="text-xl text-green-500 font-bold">
+              Q.1. How will you improve the performance of a React Application?
+            </h2>
+            <p>(1)Keeping component state local where necessary</p>
+            <p>
+              (2) Memoizing React components to prevent unnecessary re-renders
+            </p>
+            <p>(3)Code-splitting in React using dynamic import</p>
+            <p>(4) Windowing or list virtualization in React</p>
+            <p>(5)Lazy loading images in React</p>
+          </div>
+          <div className="mb-5 p-3 shadow-2xl rounded">
+            <h2 className="text-xl text-green-500 font-bold">
+              Q.2. What are the different ways to manage a state in a React
+              application?
+            </h2>
+            <h5 className="text-sxl text-green-500">
+              There are four main types of state you need to properly manage in
+              your React apps:
+            </h5>
+            <p>
+              <b>
+                <u>Local (UI) state Local state:</u>
+              </b>{" "}
+              Local (UI) state Local state is data we manage in one or another
+              component. Local state is most often managed in React using the
+              useState hook.
+            </p>
+            <p>
+              <b>
+                <u>Global (UI) state Global state:</u>
+              </b>{" "}
+              Global (UI) state Global state is data we manage across multiple
+              components. Global state is necessary when we want to get and
+              update data anywhere in our app, or in multiple components at
+              least.
+            </p>
+            <p>
+              <b>
+                <u>Server state:</u>
+              </b>{" "}
+              Server state Data that comes from an external server that must be
+              integrated with our UI state. Server state is a simple concept,
+              but can be hard to manage alongside all of our local and global UI
+              state.
+            </p>
+            <p>
+              <b>
+                <u>URL state:</u>
+              </b>{" "}
+              Data that exists on our URLs, including the pathname and query
+              parameters. URL state is often missing as a category of state, but
+              it is an important one. In many cases, a lot of major parts of our
+              application rely upon accessing URL state. Try to imagine building
+              a blog without being able to fetch a post based off of its slug or
+              id that is located in the URL!
+            </p>
+          </div>
+          <div className="mb-5 p-3 shadow-2xl rounded">
+            <h2 className="text-xl text-green-500 font-bold">
+              Q.3. How does prototypical inheritance work?
+            </h2>
+            <p>
+              The Prototypal Inheritance is a feature in javascript used to add
+              methods and properties in objects. It is a method by which an
+              object can inherit the properties and methods of another object.
+              Traditionally, in order to get and set the [[Prototype]] of an
+              object, we use Object.getPrototypeOf and Object.
+            </p>
+          </div>
+          <div className="mb-10 p-3 shadow-2xl rounded">
+            <h2 className="text-xl text-green-500 font-bold">
+              Q.4. What is a unit test? Why should write unit tests?
+            </h2>
+            <p>
+              The main objective of unit testing is to isolate written code to
+              test and determine if it works as intended. Unit testing is an
+              important step in the development process, because if done
+              correctly, it can help detect early flaws in code which may be
+              more difficult to find in later testing stages.
+            </p>
+          </div>
+          <div className="mb-10 p-3 shadow-2xl rounded">
+            <h2 className="text-xl text-green-500 font-bold">
+              Q.5. Why you do not set the state directly in React. For example,
+              if you have const [products, setProducts] = useState([]). Why you
+              do not set products = [...] instead, you use the setProducts
+            </h2>
+            <p>
+              One should never update the products directly because If you
+              update it directly, calling the setProducts() afterward may just
+              replace the update you made. When you directly update the state,
+              it does not change this.state immediately. Instead, it creates a
+              pending state transition, and accessing it after calling this
+              method will only return the present value. You will lose control
+              of the state across all components. Thats why we don't use
+              setProducts directly.
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   );

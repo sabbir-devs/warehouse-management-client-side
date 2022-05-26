@@ -13,7 +13,6 @@ const MyProfile = () => {
   const {
     data: users,
     isLoading,
-    refetch,
   } = useQuery("user", () =>
     fetch("http://localhost:5000/users", {
       method: "GET",

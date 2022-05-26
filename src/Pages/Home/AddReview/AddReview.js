@@ -27,6 +27,7 @@ const AddReview = () => {
     .then((data) => {
       console.log(data);
       toast.success("Review Added successful");
+      event.target.reset()
     })
   };
   return (

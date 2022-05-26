@@ -6,15 +6,18 @@ import { useNavigate, useParams } from "react-router-dom";
 import CheckoutForm from "../CheckoutForm/CheckoutForm";
 import Loading from "../Loading/Loading";
 import { AiOutlineDoubleLeft } from "react-icons/ai";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth } from "../../../firebase.init";
 
 const stripePromise = loadStripe(
   "pk_test_51L3XvfCIuYi8Wud8APhdh9A2wFoGashWgOW4iI38BSPA2oYx97XSjhTl9QRO76Msurs4E9mNPoPCtDzZBzGxsv7q00Xsg7qcwv"
 );
 const Payment = () => {
+  const [user] = useAuthState(auth)
   const navigate = useNavigate();
   const { payId } = useParams();
   const urli = `http://localhost:5000/orders/${payId}`;
-  const { data: orders, isLoading } = useQuery(["orders", payId], () =>
+  const { data: orders, isLoading } = useQuery(["orders", payId, user], () =>
     fetch(urli, {
       method: "GET",
       headers: {

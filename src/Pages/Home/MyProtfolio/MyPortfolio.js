@@ -1,8 +1,10 @@
 import React from "react";
+import myImg from '../../../asets/me.jpeg';
 
 const MyPortfolio = () => {
   return (
-    <div className="my-portfolio text-white px-12 h-screen grid items-center">
+    <div className="my-portfolio text-white px-12 my-12 grid items-center">
+      <img className="w-56 h-72 my-5 rounded-md" src={myImg} alt="" />
       <div><h1 className="mt-5 text-xl">Name: <span className="text-green-500">MD Sabbir</span></h1>
       <h1 className="mt-5 text-xl">Email: <span className="text-green-500">sabbirhosan370@gmail.com</span></h1>
       <h1 className="mt-5 text-xl">Education: <span className="text-green-500">SSC pass on 2021 from Satsang Tapoban High School</span></h1>

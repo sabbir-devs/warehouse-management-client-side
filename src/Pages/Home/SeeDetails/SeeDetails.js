@@ -7,22 +7,32 @@ import "./SeeDetails.css";
 const SeeDetails = () => {
   const { id } = useParams();
   const [detailProduct, setDetailProdudt] = useState({});
+  const [closeModal, setCloseModal] = useState({});
   const [total, setTotal] = useState(0);
   const orderQuantity = parseInt(total);
   useEffect(() => {
-    fetch(`http://localhost:5000/seeDetails/${id}`)
+    fetch(`http://localhost:5000/seeDetails/${id}`,{
+      method:'GET',
+      headers: {
+        "content-type": "application/json",
+        authorization : `Bearer ${localStorage.getItem('accessToken')}`,
+      },
+    })
       .then((res) => res.json())
-      .then((data) => setDetailProdudt(data));
+      .then((data) => {
+        setDetailProdudt(data)
+        setCloseModal(data)
+      });
   }, [id, detailProduct]);
 
   const handleQuantity = (event) => {
     event.preventDefault();
     const inputValue = event.target.quantity.value;
     setTotal(inputValue);
-    if(parseInt(inputValue) < detailProduct.minimum){
-      toast.error('Quantity Must Be Equal Minimum')
-    }else if(parseInt(inputValue) > parseInt(detailProduct.available)){
-      toast.error(`You Can't Order More Thand Available`)
+    if (parseInt(inputValue) < detailProduct.minimum) {
+      toast.error("Quantity Must Be Equal Minimum");
+    } else if (parseInt(inputValue) > parseInt(detailProduct.available)) {
+      toast.error(`You Can't Order More Thand Available`);
     }
   };
   return (
@@ -32,6 +42,7 @@ const SeeDetails = () => {
           <img
             src={detailProduct.img}
             className="max-w-sm rounded-lg shadow-2xl"
+            alt=""
           />
           <div>
             <h1 className="text-4xl">{detailProduct.name}</h1>
@@ -54,13 +65,21 @@ const SeeDetails = () => {
                 Purchase
               </label>
             ) : (
-              <label disabled htmlFor="my-modal-6" className="btn btn-outline mt-5">
+              <label
+                disabled
+                htmlFor="my-modal-6"
+                className="btn btn-outline mt-5"
+              >
                 Purchase disabled
               </label>
             )}
-            {
-              detailProduct && <Purchase orderQuantity={orderQuantity} detailProduct={detailProduct}></Purchase>
-            }
+            {closeModal && (
+              <Purchase
+                orderQuantity={orderQuantity}
+                detailProduct={detailProduct}
+                setCloseModal={setCloseModal}
+              ></Purchase>
+            )}
           </div>
         </div>
       </div>

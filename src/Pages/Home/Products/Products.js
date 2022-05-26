@@ -5,7 +5,13 @@ import "./Products.css";
 const Products = () => {
   const [products, setProducts] = useState([]);
   useEffect(() => {
-    fetch(`http://localhost:5000/product`)
+    fetch(`http://localhost:5000/product`,{
+      method:'GET',
+      headers:{
+        "content-type": "application/json",
+        authorization : `Bearer ${localStorage.getItem('accessToken')}`,
+      }
+    })
       .then((res) => res.json())
       .then((data) => setProducts(data.reverse()));
   }, []);

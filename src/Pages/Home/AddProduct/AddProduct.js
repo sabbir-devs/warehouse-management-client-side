@@ -25,7 +25,8 @@ const AddProduct = () => {
     fetch(url,{
         method: "POST",
         headers:{
-            'content-type' : 'application/json'
+            'content-type' : 'application/json',
+            authorization: `Bearer ${localStorage.getItem("accessToken")}`,
         },
         body: JSON.stringify(product)
     })
@@ -33,6 +34,7 @@ const AddProduct = () => {
     .then(data => {
         console.log(data)
         toast.success("Order Success");
+        event.target.reset()
     })
   };
   return (

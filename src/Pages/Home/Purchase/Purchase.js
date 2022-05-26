@@ -4,11 +4,8 @@ import { toast } from "react-toastify";
 import { auth } from "../../../firebase.init";
 import Loading from "../Loading/Loading";
 
-const Purchase = ({ orderQuantity, detailProduct }) => {
+const Purchase = ({ orderQuantity, detailProduct, setCloseModal }) => {
   const [user, loading] = useAuthState(auth);
-  //   console.log(orderQuantity);
-  //   console.log(detailProduct);
-
   if (loading) {
     return <Loading></Loading>;
   }
@@ -33,6 +30,7 @@ const Purchase = ({ orderQuantity, detailProduct }) => {
       method: "POST",
       headers: {
         "content-type": "application/json",
+        authorization : `Bearer ${localStorage.getItem('accessToken')}`,
       },
       body: JSON.stringify(orderDetail),
     })
@@ -40,6 +38,7 @@ const Purchase = ({ orderQuantity, detailProduct }) => {
       .then((data) => {
         console.log(data);
         toast.success("Order Success");
+        setCloseModal(null)
       });
   };
 
@@ -54,8 +53,8 @@ const Purchase = ({ orderQuantity, detailProduct }) => {
             </label>
           </div>
           <form onSubmit={handleModal}>
-            <h1 title={detailProduct?.name}>{detailProduct?.name}</h1>
-            <div className="form-control w-full max-w-xs">
+            <h1 className="w-10/12" title={detailProduct?.name}>{detailProduct?.name}</h1>
+            <div className="form-control w-full">
               <label className="label">
                 <span className="label-text">Name</span>
               </label>
@@ -64,10 +63,10 @@ const Purchase = ({ orderQuantity, detailProduct }) => {
                 name="name"
                 value={user?.displayName}
                 readOnly
-                className="input input-bordered w-full max-w-xs"
+                className="input input-bordered w-full"
               />
             </div>
-            <div className="form-control w-full max-w-xs">
+            <div className="form-control w-full">
               <label className="label">
                 <span className="label-text">Email</span>
               </label>
@@ -76,10 +75,10 @@ const Purchase = ({ orderQuantity, detailProduct }) => {
                 name="email"
                 value={user?.email}
                 readOnly
-                className="input input-bordered w-full max-w-xs"
+                className="input input-bordered w-full"
               />
             </div>
-            <div className="form-control w-full max-w-xs">
+            <div className="form-control w-full">
               <label className="label">
                 <span className="label-text">Quantity</span>
               </label>
@@ -88,10 +87,10 @@ const Purchase = ({ orderQuantity, detailProduct }) => {
                 name="quantity"
                 value={orderQuantity}
                 readOnly
-                className="input input-bordered w-full max-w-xs"
+                className="input input-bordered w-full"
               />
             </div>
-            <div className="form-control w-full max-w-xs">
+            <div className="form-control w-full">
               <label className="label">
                 <span className="label-text">Total Price</span>
               </label>
@@ -100,10 +99,10 @@ const Purchase = ({ orderQuantity, detailProduct }) => {
                 name="price"
                 value={orderQuantity * detailProduct?.price}
                 readOnly
-                className="input input-bordered w-full max-w-xs"
+                className="input input-bordered w-full"
               />
             </div>
-            <div className="form-control w-full max-w-xs">
+            <div className="form-control w-full">
               <label className="label">
                 <span className="label-text">Address</span>
               </label>
@@ -111,7 +110,8 @@ const Purchase = ({ orderQuantity, detailProduct }) => {
                 type="text"
                 name="address"
                 placeholder="Address"
-                className="input input-bordered w-full max-w-xs"
+                className="input input-bordered w-full"
+                required
               />
             </div>
             <div className="form-control w-full">
@@ -122,7 +122,8 @@ const Purchase = ({ orderQuantity, detailProduct }) => {
                 type="number"
                 name="number"
                 placeholder="Phone Number"
-                className="input input-bordered w-full max-w-xs"
+                className="input input-bordered w-full"
+                required
               />
             </div>
             <input
