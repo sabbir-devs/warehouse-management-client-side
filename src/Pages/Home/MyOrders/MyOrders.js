@@ -81,13 +81,16 @@ const MyOrders = () => {
                   {(order.price && order.paid) && <span className="text-success">Paid</span>}
                 </td>
                 <td>
-                  <label
+                  {
+                    order.transactionId ? (<span className="text-success">{order?.transactionId}</span>) : 
+                    (<label
                     onClick={() => setIdForDelete(order._id)}
                     htmlFor="confirm-delete-order"
-                    className="btn btn-outline btn-sm modal-button"
+                    className="btn btn-outline btn-error btn-sm modal-button"
                   >
                     Delete
-                  </label>
+                  </label>)
+                  }
                 </td>
               </tr>
             ))}
