@@ -21,7 +21,7 @@ const Dashboard = () => {
             <GiHamburgerMenu className="text-xl"></GiHamburgerMenu>
           </label>
 
-          <div className="mt-12 pt-3 lg:mt-0 bg-slate-600 px-2">
+          <div className="mt-12 pt-3 lg:mt-0 bg-slate-800 px-2">
             <Outlet></Outlet>
           </div>
         </div>

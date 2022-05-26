@@ -3,7 +3,7 @@ import myImg from '../../../asets/me.jpeg';
 
 const MyPortfolio = () => {
   return (
-    <div className="my-portfolio text-white bg-slate-600 px-12 my-12 grid items-center">
+    <div className="my-portfolio text-white bg-slate-800 px-12 my-12 grid items-center">
       <img className="w-56 h-72 my-5 rounded-md" src={myImg} alt="" />
       <div><h1 className="mt-5 text-xl">Name: <span className="text-green-500">MD Sabbir</span></h1>
       <h1 className="mt-5 text-xl">Email: <span className="text-green-500">sabbirhosan370@gmail.com</span></h1>

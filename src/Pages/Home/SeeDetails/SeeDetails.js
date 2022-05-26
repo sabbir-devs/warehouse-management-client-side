@@ -36,7 +36,7 @@ const SeeDetails = () => {
     }
   };
   return (
-    <div className="see-details p-12 bg-slate-600">
+    <div className="see-details p-12 bg-slate-800">
       <div className="hero min-h-screen bg-base-200 text-white">
         <div className="hero-content flex-col lg:flex-row-reverse  p-5">
           <img

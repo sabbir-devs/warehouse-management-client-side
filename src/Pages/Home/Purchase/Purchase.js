@@ -43,7 +43,7 @@ const Purchase = ({ orderQuantity, detailProduct, setCloseModal }) => {
   };
 
   return (
-    <div className="purchase bg-slate-600">
+    <div className="purchase bg-slate-800">
       <input type="checkbox" id="my-modal-6" className="modal-toggle" />
       <div className="modal modal-bottom sm:modal-middle">
         <div className="modal-box">

@@ -51,18 +51,18 @@ const Login = () => {
   };
 
   return (
-    <div className="login">
+    <div className="login bg-slate-800">
       <div className="form">
         <h1 className="text-3xl mb-2">Login!!</h1>
         <form className="justify-center" onSubmit={handleSubmit(onSubmit)}>
           <div className="form-control w-full max-w-xs">
             <label className="label">
-              <span className="label-text">Email</span>
+              <span className="label-text text-white">Email</span>
             </label>
             <input
               type="email"
               placeholder="Your Email"
-              className="input input-bordered w-full max-w-xs"
+              className="input input-bordered w-full text-black max-w-xs"
               {...register("email", {
                 required: {
                   value: true,
@@ -89,12 +89,12 @@ const Login = () => {
           </div>
           <div className="form-control w-full max-w-xs">
             <label className="label">
-              <span className="label-text">Password</span>
+              <span className="label-text text-white">Password</span>
             </label>
             <input
               type="password"
               placeholder="Password"
-              className="input input-bordered w-full max-w-xs"
+              className="input input-bordered text-black w-full max-w-xs"
               {...register("password", {
                 required: {
                   value: true,
