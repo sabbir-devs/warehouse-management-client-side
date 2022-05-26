@@ -11,7 +11,7 @@ const ManageAllOrders = () => {
   const [idForDeleteOrder, setIdForDeleteOrder] = useState(0);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/orders`, {
+    fetch(`https://damp-plateau-02842.herokuapp.com/orders`, {
       method: "GET",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,
@@ -24,7 +24,7 @@ const ManageAllOrders = () => {
   }, [user]);
 
   const handleDeleteAllSingleOrder = (id) => {
-    const url = `http://localhost:5000/myOrders/${id}`;
+    const url = `https://damp-plateau-02842.herokuapp.com/myOrders/${id}`;
     fetch(url, {
       method: "DELETE",
       headers: {
@@ -42,7 +42,7 @@ const ManageAllOrders = () => {
   };
 
   const handlePandingOrder = (id) => {
-    const url = `http://localhost:5000/ordersDeliver/${id}`;
+    const url = `https://damp-plateau-02842.herokuapp.com/ordersDeliver/${id}`;
     fetch(url, {
       method: "PATCH",
       headers: {

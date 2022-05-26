@@ -5,7 +5,7 @@ import "./Products.css";
 const Products = () => {
   const [products, setProducts] = useState([]);
   useEffect(() => {
-    fetch(`http://localhost:5000/product`,{
+    fetch(`https://damp-plateau-02842.herokuapp.com/product`,{
       method:'GET',
       headers:{
         "content-type": "application/json",

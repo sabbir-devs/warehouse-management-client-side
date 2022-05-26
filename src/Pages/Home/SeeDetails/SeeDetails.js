@@ -11,7 +11,7 @@ const SeeDetails = () => {
   const [total, setTotal] = useState(0);
   const orderQuantity = parseInt(total);
   useEffect(() => {
-    fetch(`http://localhost:5000/seeDetails/${id}`,{
+    fetch(`https://damp-plateau-02842.herokuapp.com/seeDetails/${id}`,{
       method:'GET',
       headers: {
         "content-type": "application/json",

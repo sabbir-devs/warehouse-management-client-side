@@ -16,7 +16,7 @@ const MyOrders = () => {
 
   useEffect(() => {
     if(user){
-      fetch(`http://localhost:5000/myOrders?customerEmail=${user?.email}`, {
+      fetch(`https://damp-plateau-02842.herokuapp.com/myOrders?customerEmail=${user?.email}`, {
       method: "GET",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,
@@ -39,7 +39,7 @@ const MyOrders = () => {
     return <Loading></Loading>
   }
   const handleDeleteOrder = (id) => {
-    const url = `http://localhost:5000/myOrders/${id}`;
+    const url = `https://damp-plateau-02842.herokuapp.com/myOrders/${id}`;
     fetch(url, {
       method: "DELETE",
       headers:{

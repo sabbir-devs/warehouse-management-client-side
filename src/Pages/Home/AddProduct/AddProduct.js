@@ -21,7 +21,7 @@ const AddProduct = () => {
       available: productAvailable,
     };
     console.log(product);
-    const url = `http://localhost:5000/product`;
+    const url = `https://damp-plateau-02842.herokuapp.com/product`;
     fetch(url,{
         method: "POST",
         headers:{

@@ -9,7 +9,7 @@ import "./MakeAdmin.css";
 const MakeAdmin = () => {
   const [user, loading] = useAuthState(auth)
   const { data: users, isLoading, refetch } = useQuery(["user", user], () =>
-    fetch("http://localhost:5000/user",{
+    fetch("https://damp-plateau-02842.herokuapp.com/user",{
       method: "GET",
       headers: {
         'content-type': 'application/json',
@@ -22,7 +22,7 @@ const MakeAdmin = () => {
   }
 
   const handleMakeAdmin = (email) => {
-    fetch(`http://localhost:5000/user/admin/${email}`,{
+    fetch(`https://damp-plateau-02842.herokuapp.com/user/admin/${email}`,{
       method:'PUT',
       headers:{
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,

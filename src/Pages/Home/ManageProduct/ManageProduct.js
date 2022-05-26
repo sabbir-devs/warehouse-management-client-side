@@ -5,7 +5,7 @@ const ManageProduct = ({product, refetch}) => {
     const { _id, name, img, discription, minimum, price, available } = product;
 
     const handleDeleteProduct = (id) => {
-      const url = `http://localhost:5000/product/${id}`;
+      const url = `https://damp-plateau-02842.herokuapp.com/product/${id}`;
       fetch(url, {
         method: "DELETE",
         headers:{

@@ -6,7 +6,7 @@ import "./Review.css";
 const Review = () => {
   const [reviews, setReviews] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/reviews")
+    fetch("https://damp-plateau-02842.herokuapp.com/reviews")
       .then((res) => res.json())
       .then((data) => setReviews(data.reverse()));
   }, [reviews]);

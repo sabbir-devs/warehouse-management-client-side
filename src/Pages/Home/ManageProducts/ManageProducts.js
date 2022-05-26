@@ -9,7 +9,7 @@ import "./ManageProducts.css";
 const ManageProducts = () => {
   const [user, loading] = useAuthState(auth)
   const { data: products, isLoading, refetch } = useQuery(["product", user], () =>
-    fetch("http://localhost:5000/product",{
+    fetch("https://damp-plateau-02842.herokuapp.com/product",{
       method:'GET',
       headers:{
         "content-type": "application/json",

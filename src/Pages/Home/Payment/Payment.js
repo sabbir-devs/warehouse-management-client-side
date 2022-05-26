@@ -16,7 +16,7 @@ const Payment = () => {
   const [user] = useAuthState(auth)
   const navigate = useNavigate();
   const { payId } = useParams();
-  const urli = `http://localhost:5000/orders/${payId}`;
+  const urli = `https://damp-plateau-02842.herokuapp.com/orders/${payId}`;
   const { data: orders, isLoading } = useQuery(["orders", payId, user], () =>
     fetch(urli, {
       method: "GET",

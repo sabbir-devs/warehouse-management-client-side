@@ -14,7 +14,7 @@ const MyProfile = () => {
     data: users,
     isLoading,
   } = useQuery("user", () =>
-    fetch("http://localhost:5000/users", {
+    fetch("https://damp-plateau-02842.herokuapp.com/users", {
       method: "GET",
       headers: {
         email: user?.email

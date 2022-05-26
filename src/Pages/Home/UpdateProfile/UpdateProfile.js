@@ -18,7 +18,7 @@ const UpdateProfile = () => {
       social: event.target.social.value,
     };
     console.log(updateInformation);
-    fetch(`http://localhost:5000/users/${user?.email}`, {
+    fetch(`https://damp-plateau-02842.herokuapp.com/users/${user?.email}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
