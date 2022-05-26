@@ -56,7 +56,7 @@ const MyOrders = () => {
       });
   };
   return (
-    <div className="my-orders bg-base-100">
+    <div className="my-orders bg-base-300">
       <div className="overflow-x-auto">
         <table className="table w-full">
           <thead>

@@ -31,7 +31,7 @@ const AddReview = () => {
     })
   };
   return (
-    <div className="add-review grid items-center justify-center mt-4 lg:mt-12">
+    <div className="add-review bg-base-300 py-5 grid items-center justify-center mt-4 lg:mt-12">
       <div className="card w-96 bg-gray-700 text-white shadow-xl">
         <div className="card-body">
           <h2 className="card-title">Share Your Opinion</h2>

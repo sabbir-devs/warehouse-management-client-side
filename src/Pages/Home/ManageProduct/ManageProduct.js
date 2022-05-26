@@ -21,7 +21,7 @@ const ManageProduct = ({product, refetch}) => {
         });
     }
     return (
-        <div className="product cardbg-base-100 shadow-xl w-full text-white">
+        <div className="product cardbg-base-300 shadow-xl w-full text-white">
       <div className="card-body">
         <img className="h-52" src={img} alt="" />
         <h1 className="text-2xl">{name}</h1>

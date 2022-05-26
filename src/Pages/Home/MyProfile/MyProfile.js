@@ -25,13 +25,13 @@ const MyProfile = () => {
     return <Loading></Loading>;
   }
   return (
-    <div className="my-profile grid items-center bg-base-100">
+    <div className="my-profile grid items-center bg-base-300 py-5">
       <div className="avater grid justify-items-center mt-8 mb-[30px]">
         <div className="w-44 rounded-full">
           <img className="rounded-full" src={user?.photoURL || noProfilePic} alt="" />
         </div>
       </div>
-      <div className="flex bg-base-100 h-[50hv]">
+      <div className="flex bg-base-300 h-[50hv]">
         <div className="flex-auto w-2/5 text-center lg:mt-20 text-white-300">
           <p>Name: <span className="text-green-500 text-xl">{user?.displayName}</span></p>
           <p>Email: <span className="text-green-500 text-xl">{user?.email}</span></p>
