@@ -36,13 +36,13 @@ const UpdateProfile = () => {
     return <Loading></Loading>;
   }
   return (
-    <div>
-      <button className="btn px-5 flex items-center ml-5 mt-5 justify-center" onClick={() => navigate(-1)}>
+    <div className="bg-base-100">
+      <button className="btn px-5 flex bg-base-100 items-center ml-5 mt-5 justify-center " onClick={() => navigate(-1)}>
           <AiOutlineDoubleLeft className="mr-2 text-xl"></AiOutlineDoubleLeft>
         Back to My Profile
       </button>
       <div className="update-porfile grid items-center justify-center my-8">
-        <div className="card w-96 bg-base-100 shadow-2xl grid items-center p-4 ">
+        <div className="card w-96shadow-2xl bg-base-100 grid items-center p-4 ">
           <h1 className="text-xl my-4">UPDATE YOUR PROFILE</h1>
           <form
             onSubmit={handleUpdateProfile}

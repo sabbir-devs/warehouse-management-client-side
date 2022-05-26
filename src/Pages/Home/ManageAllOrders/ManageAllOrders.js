@@ -3,7 +3,6 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { toast } from "react-toastify";
 import { auth } from "../../../firebase.init";
 import Loading from "../Loading/Loading";
-import { useQuery } from "react-query";
 
 const ManageAllOrders = () => {
   const [user, loading] = useAuthState(auth);
@@ -60,7 +59,7 @@ const ManageAllOrders = () => {
     return <Loading></Loading>;
   }
   return (
-    <div className="my-orders">
+    <div className="my-orders bg-base-100">
       <div className="overflow-x-auto">
         <table className="table w-full">
           <thead>

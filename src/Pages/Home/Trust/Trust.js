@@ -7,7 +7,7 @@ import { VscFeedback } from 'react-icons/vsc';
 
 const Trust = () => {
   return (
-    <div className="text-white mt-10">
+    <div className="text-white bg-base-100 mt-10">
       <h1 className="uppercase text-2xl lg:text-4xl text-center">Milleons busness trust Us</h1>
       <div className="trust flex flex-col lg:flex-row lg:flex items-center justify-center px-12 mb-12 mt-5 text-red-500 text-2xl">     
       <div className="text-center mt-8 lg:mt-1 w-1/4 lg:w-full flex flex-col justify-center items-center">

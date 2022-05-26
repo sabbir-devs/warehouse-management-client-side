@@ -11,7 +11,7 @@ const Review = () => {
       .then((data) => setReviews(data.reverse()));
   }, [reviews]);
   return (
-    <div className="review p-12 mt-12 text-white">
+    <div className="review p-12 mt-12 bg-base-100 text-white">
       <h1 className="text-5xl text-center">Customer Review</h1>
       <div className="card bg-base-100 grid grid-cols-1 lg:grid-cols-3 gap-4 ">
         {reviews?.map((review) => (

@@ -38,7 +38,7 @@ const AddProduct = () => {
     })
   };
   return (
-    <div className="add-product flex items-center justify-center my-8">
+    <div className="add-product flex items-center justify-center bg-base-100 my-8">
       <div className="card w-96 bg-base-100 shadow-xl">
         <div className="card-body">
           <h2 className="card-title">Add Product</h2>

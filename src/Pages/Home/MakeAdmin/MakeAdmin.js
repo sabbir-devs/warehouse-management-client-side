@@ -43,7 +43,7 @@ const MakeAdmin = () => {
   }
 
   return (
-    <div className="make-admin">
+    <div className="make-admin bg-base-100">
       <div className="overflow-x-auto">
         <table className="table w-full">
           <thead>

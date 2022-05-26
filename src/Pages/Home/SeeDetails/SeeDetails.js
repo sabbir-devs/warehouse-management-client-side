@@ -36,15 +36,15 @@ const SeeDetails = () => {
     }
   };
   return (
-    <div className="see-details p-12">
+    <div className="see-details p-12 bg-base-100">
       <div className="hero min-h-screen bg-base-200 text-white">
-        <div className="hero-content flex-col lg:flex-row-reverse p-5">
+        <div className="hero-content flex-col lg:flex-row-reverse  p-5">
           <img
             src={detailProduct.img}
-            className="max-w-sm rounded-lg shadow-2xl"
+            className=" w-full-sm lg:max-w-sm rounded-lg shadow-2xl"
             alt=""
           />
-          <div>
+          <div className="">
             <h1 className="text-4xl">{detailProduct.name}</h1>
             <p className="my-4">{detailProduct.discription}</p>
             <h2 className="text-2xl">Price: ${detailProduct.price}</h2>

@@ -25,7 +25,7 @@ const MyProfile = () => {
     return <Loading></Loading>;
   }
   return (
-    <div className="my-profile grid items-center">
+    <div className="my-profile grid items-center bg-base-100">
       <div className="avater grid justify-items-center mt-8 mb-[30px]">
         <div className="w-44 rounded-full">
           <img className="rounded-full" src={user?.photoURL || noProfilePic} alt="" />

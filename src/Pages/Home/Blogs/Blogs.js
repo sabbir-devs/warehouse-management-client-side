@@ -3,9 +3,9 @@ import "./Blogs.css";
 
 const Blogs = () => {
   return (
-    <div className="blogs px-12 gap-5 grid text-white my-12">
+    <div className="blogs px-2 lg:px-12 gap-5 grid bg-base-100 text-white my-12">
       <div>
-        <div className="mt-10 mb-15 max-w-7xl mx-auto px-12">
+        <div className="mt-10 mb-15 mx-auto px-12">
           <div className="mb-5 p-3 shadow-2xl rounded">
             <h2 className="text-xl text-green-500 font-bold">
               Q.1. How will you improve the performance of a React Application?
