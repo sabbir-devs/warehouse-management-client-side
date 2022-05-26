@@ -61,7 +61,7 @@ const MakeAdmin = () => {
                 <th>{index + 1}</th>
                 <td>{user.email}</td>
                 <td>{user?.role !== 'admin' ? <button className="btn btn-outline btn-sm" onClick={() => handleMakeAdmin(user.email)}>Make Admin</button>:(<p>Alrady An Admin</p>)}</td>
-                <td><button className="btn btn-outline btn-sm ">Delete user</button></td>
+                <td>{user?.role !== 'admin' &&<button className="btn btn-outline btn-sm ">Delete user</button>}</td>
               </tr>
             ))}
           </tbody>
