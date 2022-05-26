@@ -7,8 +7,8 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../../../firebase.init";
 
 const Dashboard = () => {
-  const [user] = useAuthState(auth)
-  const [admin] = useAdmin(user)
+  const [user] = useAuthState(auth);
+  const [admin] = useAdmin(user);
   return (
     <div className="dashboard">
       <div className="drawer drawer-mobile">
@@ -29,26 +29,30 @@ const Dashboard = () => {
           <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
           <ul className="menu p-4 overflow-y-auto w-60 bg-slate-300 text-black">
             <li>
-              <Link to="/dashboard">My Order</Link>
+              <Link to="/dashboard/myOrder">My Order</Link>
             </li>
             <li>
               <Link to="/dashboard/addReview">Add Review</Link>
             </li>
             <li>
-              <Link to="/dashboard/myProfile">My Profile</Link>
+              <Link to="/dashboard">My Profile</Link>
             </li>
             <li>
               <Link to="/dashboard/manageOrders">Manage All Orders</Link>
             </li>
-            <li>
-              <Link to="/dashboard/addProduct">Add A Product</Link>
-            </li>
-            {admin && <li>
-              <Link to="/dashboard/makeAdmin">Make Admin</Link>
-            </li>}
-            <li>
-              <Link to="/dashboard/manageProducts">Manage Products</Link>
-            </li>
+            {admin && (
+              <>
+                <li>
+                  <Link to="/dashboard/addProduct">Add A Product</Link>
+                </li>
+                <li>
+                  <Link to="/dashboard/makeAdmin">Make Admin</Link>
+                </li>
+                <li>
+                  <Link to="/dashboard/manageProducts">Manage Products</Link>
+                </li>
+              </>
+            )}
           </ul>
         </div>
       </div>
