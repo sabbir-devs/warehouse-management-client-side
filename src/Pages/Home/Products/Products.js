@@ -16,7 +16,7 @@ const Products = () => {
       .then((data) => setProducts(data.reverse()));
   }, []);
   return (
-    <div className="text-white bg-base-300 mt-7 py-5">
+    <div className="text-white bg-slate-600 mt-7 py-5">
       <h1 className="text-center mt-5 text-4xl">Our Products</h1>
       <div className="products grid lg:grid-cols-3 px-12 mb-12 gap-5">
         {products.map((product) => (

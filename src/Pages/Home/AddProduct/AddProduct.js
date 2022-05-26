@@ -38,8 +38,8 @@ const AddProduct = () => {
     })
   };
   return (
-    <div className="add-product flex items-center py-5 justify-center bg-base-300 my-8">
-      <div className="card w-96 bg-base-300 shadow-xl">
+    <div className="add-product flex items-center py-5 justify-center bg-slate-600 my-8">
+      <div className="card w-96 bg-slate-600 shadow-xl">
         <div className="card-body">
           <h2 className="card-title">Add Product</h2>
           <form onSubmit={handleAddPost}>

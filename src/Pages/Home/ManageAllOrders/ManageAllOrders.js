@@ -59,7 +59,7 @@ const ManageAllOrders = () => {
     return <Loading></Loading>;
   }
   return (
-    <div className="my-orders bg-base-300">
+    <div className="my-orders bg-slate-600">
       <div className="overflow-x-auto">
         <table className="table w-full">
           <thead>

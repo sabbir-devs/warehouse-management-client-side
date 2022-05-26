@@ -40,7 +40,7 @@ const Payment = () => {
         Back
       </button>
       <div className="payment text-white grid justify-center items-center">
-        <div className="card bg-base-300 w-4/5 shadow-2xl my-12">
+        <div className="card bg-slate-600 w-4/5 shadow-2xl my-12">
           <div className="card-body">
             <p className="text-success text-xl">Hello, {orders.customerName}</p>
             <h2 className="card-title text-2xl">
@@ -51,7 +51,7 @@ const Payment = () => {
             </p>
           </div>
         </div>
-        <div className="card  max-w-md w-4/5 shadow-2xl bg-base-300">
+        <div className="card  max-w-md w-4/5 shadow-2xl bg-slate-600">
           <div className="card-body">
             <Elements stripe={stripePromise}>
               <CheckoutForm orders={orders} />
