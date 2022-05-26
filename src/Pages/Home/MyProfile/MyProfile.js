@@ -6,7 +6,6 @@ import noProfilePic from "../../../asets/no-profile-pic.jpg";
 import Loading from "../Loading/Loading";
 import { useQuery } from "react-query";
 import { Link } from "react-router-dom";
-import UpdateProfile from "../UpdateProfile/UpdateProfile";
 
 const MyProfile = () => {
   const [user, loading] = useAuthState(auth);
@@ -35,10 +34,11 @@ const MyProfile = () => {
       </div>
       <div className="flex bg-base-100 h-[50hv]">
         <div className="flex-auto w-2/5 text-center lg:mt-20 text-white-300">
-          <p>{user?.displayName}</p>
-          <p>{user?.email}</p>
-          <p>{users?.address}</p>
-          <p>{users?.phone}</p>
+          <p>Name: <span className="text-green-500 text-xl">{user?.displayName}</span></p>
+          <p>Email: <span className="text-green-500 text-xl">{user?.email}</span></p>
+          {users?.address &&<p>Address: <span className="text-green-500 text-xl">{users?.address}</span></p>}
+          {users?.phone && <p>Phone Number: <span className="text-green-500 text-xl">{users?.phone}</span></p>}
+          {users?.social && <p>Social Link: <span className="text-green-500 text-xl">{users?.social}</span></p>}
         </div>
         <div className="flex-auto text-center items center lg:mt-20 w-2/5">
           <button className="btn btn-sm">

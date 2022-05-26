@@ -1,7 +1,7 @@
 import { signOut } from "firebase/auth";
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { auth } from "../../../firebase.init";
 import Loading from "../Loading/Loading";
@@ -42,6 +42,10 @@ const MyOrders = () => {
     const url = `http://localhost:5000/myOrders/${id}`;
     fetch(url, {
       method: "DELETE",
+      headers:{
+        "content-type": "application/json",
+        authorization : `Bearer ${localStorage.getItem('accessToken')}`,
+      }
     })
       .then((res) => res.json())
       .then((resData) => {
@@ -61,7 +65,7 @@ const MyOrders = () => {
               <th>Name</th>
               <th>Quantity</th>
               <th>Price</th>
-              <th></th>
+              <th>Pyment</th>
               <th></th>
             </tr>
           </thead>
@@ -73,7 +77,8 @@ const MyOrders = () => {
                 <td>{order.orderQuantity}</td>
                 <td>$ {order.price}</td>
                 <td>
-                  <button className="btn btn-outline btn-sm">Pay</button>
+                  {(order.price && !order.paid) && <Link to={`/dashboard/payment/${order._id}`}><button className="btn btn-outline btn-sm">Pay</button></Link>}
+                  {(order.price && order.paid) && <span className="text-success">Paid</span>}
                 </td>
                 <td>
                   <label

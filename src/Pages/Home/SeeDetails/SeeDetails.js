@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { toast } from "react-toastify";
 import Purchase from "../Purchase/Purchase";
 import "./SeeDetails.css";
 
@@ -18,6 +19,11 @@ const SeeDetails = () => {
     event.preventDefault();
     const inputValue = event.target.quantity.value;
     setTotal(inputValue);
+    if(parseInt(inputValue) < detailProduct.minimum){
+      toast.error('Quantity Must Be Equal Minimum')
+    }else if(parseInt(inputValue) > parseInt(detailProduct.available)){
+      toast.error(`You Can't Order More Thand Available`)
+    }
   };
   return (
     <div className="see-details p-12">

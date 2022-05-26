@@ -1,11 +1,14 @@
 import React from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { useQuery } from "react-query";
 import { toast } from "react-toastify";
+import { auth } from "../../../firebase.init";
 import Loading from "../Loading/Loading";
 import "./MakeAdmin.css";
 
 const MakeAdmin = () => {
-  const { data: users, isLoading, refetch } = useQuery("user", () =>
+  const [user, loading] = useAuthState(auth)
+  const { data: users, isLoading, refetch } = useQuery(["user", user], () =>
     fetch("http://localhost:5000/user",{
       method: "GET",
       headers: {
@@ -14,7 +17,7 @@ const MakeAdmin = () => {
       },
     }).then((res) => res.json())
   );
-  if (isLoading) {
+  if (isLoading || loading) {
     return <Loading></Loading>;
   }
 
@@ -41,7 +44,6 @@ const MakeAdmin = () => {
 
   return (
     <div className="make-admin">
-      <h1>make Admin {users?.length}</h1>
       <div className="overflow-x-auto">
         <table className="table w-full">
           <thead>
