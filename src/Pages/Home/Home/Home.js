@@ -9,7 +9,7 @@ import AboutUs from '../AboutUs/AboutUs';
 
 const Home = () => {
     return (
-        <div className='home bg-slate-800'>
+        <div className='home bg-slate-900'>
             <Banner/>
             <Trust/>
             <Products/>

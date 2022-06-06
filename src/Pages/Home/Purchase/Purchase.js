@@ -43,12 +43,12 @@ const Purchase = ({ orderQuantity, detailProduct, setCloseModal }) => {
   };
 
   return (
-    <div className="purchase bg-slate-800">
+    <div className="purchase bg-slate-900">
       <input type="checkbox" id="my-modal-6" className="modal-toggle" />
       <div className="modal modal-bottom sm:modal-middle">
         <div className="modal-box">
           <div className="modal-action absolute top-0 right-0 mb-4">
-            <label htmlFor="my-modal-6" className="btn btn-outline mr-2 px-5">
+            <label htmlFor="my-modal-6" className="btn  mr-2 px-5">
               X
             </label>
           </div>
@@ -129,7 +129,7 @@ const Purchase = ({ orderQuantity, detailProduct, setCloseModal }) => {
             <input
               type="submit"
               value="Place Order"
-              className="w-full btn btn-outline mt-4"
+              className="w-full btn  mt-4"
             />
           </form>
         </div>

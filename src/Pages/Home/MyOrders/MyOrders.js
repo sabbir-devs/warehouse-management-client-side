@@ -56,7 +56,7 @@ const MyOrders = () => {
       });
   };
   return (
-    <div className="my-orders bg-slate-800">
+    <div className="my-orders bg-slate-900">
       <div className="overflow-x-auto">
         <table className="table w-full">
           <thead>
@@ -77,7 +77,7 @@ const MyOrders = () => {
                 <td>{order.orderQuantity}</td>
                 <td>$ {order.price}</td>
                 <td>
-                  {(order.price && !order.paid) && <Link to={`/dashboard/payment/${order._id}`}><button className="btn btn-outline btn-sm">Pay</button></Link>}
+                  {(order.price && !order.paid) && <Link to={`/dashboard/payment/${order._id}`}><button className="btn  btn-sm">Pay</button></Link>}
                   {(order.price && order.paid) && <span className="text-success">Paid</span>}
                 </td>
                 <td>
@@ -86,7 +86,7 @@ const MyOrders = () => {
                     (<label
                     onClick={() => setIdForDelete(order._id)}
                     htmlFor="confirm-delete-order"
-                    className="btn btn-outline btn-error btn-sm modal-button"
+                    className="btn  btn-error btn-sm modal-button"
                   >
                     Delete
                   </label>)
@@ -109,7 +109,7 @@ const MyOrders = () => {
               <div className="modal-action">
                 <label
                   htmlFor="confirm-delete-order"
-                  className="btn btn-outline btn-sm"
+                  className="btn  btn-sm"
                 >
                   Cancle
                 </label>
@@ -118,7 +118,7 @@ const MyOrders = () => {
                 <label
                   onClick={() => handleDeleteOrder(idForDelete)}
                   htmlFor="confirm-delete-order"
-                  className="btn btn-outline btn-sm"
+                  className="btn  btn-sm"
                 >
                   Confirm
                 </label>

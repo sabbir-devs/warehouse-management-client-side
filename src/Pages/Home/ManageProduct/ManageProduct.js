@@ -21,7 +21,7 @@ const ManageProduct = ({product, refetch}) => {
         });
     }
     return (
-        <div className="product cardbg-slate-800 shadow-xl w-full text-white">
+        <div className="product cardbg-slate-900 shadow-xl w-full text-white">
       <div className="card-body">
         <img className="h-52" src={img} alt="" />
         <h1 className="text-2xl">{name}</h1>
@@ -29,7 +29,7 @@ const ManageProduct = ({product, refetch}) => {
         <p>Minimum Order: {minimum}</p>
         <p>Available: {available}</p>
         <p title={discription}>{discription.slice(0, 250) + '...'}</p>
-        <button onClick={() => handleDeleteProduct(_id)} className="btn btn-outline">Delete</button>
+        <button onClick={() => handleDeleteProduct(_id)} className="btn ">Delete</button>
       </div>
     </div>
     );

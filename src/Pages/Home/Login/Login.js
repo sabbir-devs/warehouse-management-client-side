@@ -51,7 +51,7 @@ const Login = () => {
   };
 
   return (
-    <div className="login bg-slate-800">
+    <div className="login bg-slate-900">
       <div className="form">
         <h1 className="text-3xl mb-2">Login!!</h1>
         <form className="justify-center" onSubmit={handleSubmit(onSubmit)}>

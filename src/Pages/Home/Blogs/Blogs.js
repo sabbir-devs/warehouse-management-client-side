@@ -3,7 +3,7 @@ import "./Blogs.css";
 
 const Blogs = () => {
   return (
-    <div className="blogs px-2 lg:px-12 gap-5 grid bg-slate-800 text-white my-12">
+    <div className="blogs px-2 lg:px-12 gap-5 grid bg-slate-900 text-white my-12">
       <div>
         <div className="mt-10 mb-15 mx-auto px-12">
           <div className="mb-5 p-3 shadow-2xl rounded">

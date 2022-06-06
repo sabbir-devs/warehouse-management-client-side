@@ -59,7 +59,7 @@ const ManageAllOrders = () => {
     return <Loading></Loading>;
   }
   return (
-    <div className="my-orders bg-slate-800">
+    <div className="my-orders bg-slate-900">
       <div className="overflow-x-auto">
         <table className="table w-full">
           <thead>
@@ -91,7 +91,7 @@ const ManageAllOrders = () => {
                   {!order?.paid && (
                     <label
                       htmlFor="confirm-delete-orders"
-                      className="btn btn-outline btn-error btn-sm modal-button"
+                      className="btn  btn-error btn-sm modal-button"
                       onClick={() => setIdForDeleteOrder(order._id)}
                     >
                       Delete
@@ -100,7 +100,7 @@ const ManageAllOrders = () => {
                   {order?.paid && (
                     order?.deliver ? <button
                       onClick={() => handlePandingOrder(order._id)}
-                      className="btn btn-outline btn-sm"
+                      className="btn  btn-sm"
                     >
                       Pending
                     </button> : <span className="text-success">shipped</span>
@@ -123,7 +123,7 @@ const ManageAllOrders = () => {
               <div className="modal-action">
                 <label
                   htmlFor="confirm-delete-orders"
-                  className="btn btn-outline btn-sm"
+                  className="btn  btn-sm"
                 >
                   Cancle
                 </label>
@@ -132,7 +132,7 @@ const ManageAllOrders = () => {
                 <label
                   onClick={() => handleDeleteAllSingleOrder(idForDeleteOrder)}
                   htmlFor="confirm-delete-orders"
-                  className="btn btn-outline btn-sm"
+                  className="btn  btn-sm"
                 >
                   Confirm
                 </label>

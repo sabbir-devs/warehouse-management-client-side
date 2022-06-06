@@ -38,74 +38,74 @@ const AddProduct = () => {
     })
   };
   return (
-    <div className="add-product flex items-center py-5 justify-center bg-slate-800 my-8">
-      <div className="card w-96 bg-slate-800 shadow-xl">
+    <div className="add-product flex items-center py-5 justify-center bg-slate-900 my-8">
+      <div className="card w-96 bg-slate-700 shadow-xl">
         <div className="card-body">
-          <h2 className="card-title">Add Product</h2>
+          <h2 className="card-title text-white">Add Product</h2>
           <form onSubmit={handleAddPost}>
             <div className="form-control w-full max-w-xs">
               <label className="label">
-                <span className="label-text">Product Name</span>
+                <span className="label-text text-white">Product Name</span>
               </label>
               <input
                 type="text"
                 required
                 name="productName"
                 placeholder="Product Name"
-                className="input input-bordered w-full max-w-xs"
+                className="input input-bordered w-full text-black max-w-xs"
               />
             </div>
             <div className="form-control w-full max-w-xs">
               <label className="label">
-                <span className="label-text">Price</span>
+                <span className="label-text text-white">Price</span>
               </label>
               <input
                 type="number"
                 required
                 name="productPrice"
                 placeholder="Price"
-                className="input input-bordered w-full max-w-xs"
+                className="input input-bordered w-full text-black max-w-xs"
               />
             </div>
             <div className="form-control w-full max-w-xs">
               <label className="label">
-                <span className="label-text">Minimum Quantity</span>
+                <span className="label-text text-white">Minimum Quantity</span>
               </label>
               <input
                 type="number"
                 required
                 name="minimumQuantity"
                 placeholder="Minimum Quantity"
-                className="input input-bordered w-full max-w-xs"
+                className="input input-bordered w-full text-black max-w-xs"
               />
             </div>
             <div className="form-control w-full max-w-xs">
               <label className="label">
-                <span className="label-text">Product Available</span>
+                <span className="label-text text-white">Product Available</span>
               </label>
               <input
                 type="number"
                 required
                 name="productAvailable"
                 placeholder="Product Available"
-                className="input input-bordered w-full max-w-xs"
+                className="input input-bordered w-full text-black max-w-xs"
               />
             </div>
             <div className="form-control w-full max-w-xs">
               <label className="label">
-                <span className="label-text">Image Url</span>
+                <span className="label-text text-white">Image Url</span>
               </label>
               <input
                 type="text"
                 required
                 name="imgUrl"
                 placeholder="Image Url"
-                className="input input-bordered w-full max-w-xs"
+                className="input input-bordered w-full text-black max-w-xs"
               />
             </div>
             <div className="form-control w-full max-w-xs">
               <label className="label">
-                <span className="label-text">Short Description</span>
+                <span className="label-text text-white">Short Description</span>
               </label>
               <textarea
                 className="textarea textarea-bordered"
@@ -117,7 +117,7 @@ const AddProduct = () => {
             <input
               type="submit"
               value="Add Product"
-              className="btn btn-outline mt-4"
+              className="btn  mt-4"
             />
           </form>
         </div>

@@ -36,8 +36,8 @@ const SeeDetails = () => {
     }
   };
   return (
-    <div className="see-details p-12 bg-slate-800">
-      <div className="hero min-h-screen bg-base-200 text-white">
+    <div className="see-details p-12 bg-slate-900">
+      <div className="hero min-h-screen text-white">
         <div className="hero-content flex-col lg:flex-row-reverse  p-5">
           <img
             src={detailProduct.img}
@@ -61,14 +61,14 @@ const SeeDetails = () => {
             </form>
             {orderQuantity > parseInt(detailProduct.minimum) &&
             orderQuantity <= parseInt(detailProduct.available) ? (
-              <label htmlFor="my-modal-6" className="btn btn-outline mt-5">
+              <label htmlFor="my-modal-6" className="btn  mt-5">
                 Purchase
               </label>
             ) : (
               <label
                 disabled
                 htmlFor="my-modal-6"
-                className="btn btn-outline mt-5"
+                className="btn  mt-5"
               >
                 Purchase disabled
               </label>
